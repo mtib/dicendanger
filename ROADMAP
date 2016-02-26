@@ -1,0 +1,28 @@
+ ROADMAP
+=========
+
+Encounter:
+- Multi-Gegner Encounter
+- Exportieren/Speichern von Encountern
+- Nach Initiative ordnen (last -> next)
+- Schwierigkeitsgrad/Exp Rechner
+
+Refactoring:
+- Umstrukturierung in Packages
+- Github Issues, Milestones, Tags, Releases einrichten
+- Tests schreiben
+
+Generation:
+- Zufallsgeneration von Gegnern nach Schwierigkeitsgrad
+- Begrenzung von Zufall auf Umgebung (Wald, Höhle, ...)
+- Generation von Räumen und Abenteuern bzw. Zielen
+- In Raumgeneration versteckte Gegenstände einbinden
+- In Dungeons Fallen einbinden
+
+Gegenstände:
+- Struct erstellen
+- IO erstellen
+
+Charakter:
+- Generator
+- Per Charakter EXP
