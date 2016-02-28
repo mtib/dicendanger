@@ -1,4 +1,6 @@
 # Dice 'N Danger Toolkit
+
+[![Join the chat at https://gitter.im/mtib/dicendanger](https://badges.gitter.im/mtib/dicendanger.svg)](https://gitter.im/mtib/dicendanger?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/mtib/dicendanger.svg?branch=master)](https://travis-ci.org/mtib/dicendanger)
 
 Dieses Toolkit soll dem technisch versierten Dungeon Master ein wenig Arbeit
