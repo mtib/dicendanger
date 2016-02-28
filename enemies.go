@@ -1,13 +1,50 @@
 package main
 
-// Name: HD ATD ATB ARB
-var rawEnemies = RawEnemyList{
-	"Bandit": rawEnemyGen("2d6+1 s1d4", "1d4+1", 3, 10),
-	"Baer":   rawEnemyGen("2d6+6", "1d6", 4, 8),
-	"Golem":  rawEnemyGen("3d10+2", "1d6+3", 6, 4),
-	"Soldat": rawEnemyGen("3d6", "2d4", 4, 7),
-	"Pixie":  rawEnemyGen("2d6", "1d4", 6, 14),
-	"Magier": rawEnemyGen("3d6 1d10", "1d8", 6, 8),
-	"Imp":    rawEnemyGen("2d6+3", "1d4 1d4 s1d4", 4, 8),
-	"Goblin": rawEnemyGen("3d4", "1d4", 3, 8),
+import (
+	"fmt"
+	"github.com/mtib/dicendanger/dice"
+)
+
+// Encounter sammelt Gegner eines Encounters
+type Encounter []Enemy
+
+// RawEnemy wird benutzt um einen "lebendigen" Gegner zu generieren
+type RawEnemy struct {
+	Hitdice dice.WurfelClass
+	Attdice dice.WurfelClass
+	Attack  int64
+	Armor   int64
+}
+
+// Enemy ist der "lebendige" Gegner
+type Enemy struct {
+	Name          string
+	Health        int64
+	Attdice       *dice.WurfelClass
+	Attack, Armor *int64
+}
+
+var aktiveEnemies Encounter
+
+// RawEnemyList enthaelt alle Rohdaten fuer exportierbare Gegner
+type RawEnemyList map[string]RawEnemy
+
+func rawEnemyGen(hd, ad string, at, ar int64) RawEnemy {
+	return RawEnemy{dice.CompileMultiple(hd), dice.CompileMultiple(ad), at, ar}
+}
+
+func newEnemy(name string) Enemy {
+	re, ok := rawEnemies[name]
+	if !ok {
+		return Enemy{}
+	}
+	return Enemy{name, re.Hitdice.RollAll(), &re.Attdice, &re.Attack, &re.Armor}
+}
+
+func (e Enemy) String() string {
+	return fmt.Sprintf("%s:\n\tTP: %d\n\tATD: %v\n\tATB: %v\n\tRKL: %v", e.Name, e.Health, *e.Attdice, *e.Attack, *e.Armor)
+}
+
+func (re RawEnemy) String() string {
+	return fmt.Sprintf("[%d:%d]TP, [%d:%d]ATD, [%d]ATB, [%d]RKL", re.Hitdice.Min(), re.Hitdice.Max(), re.Attdice.Min(), re.Attdice.Max(), re.Attack, re.Armor)
 }
