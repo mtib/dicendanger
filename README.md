@@ -1,5 +1,8 @@
 # Dice 'N Danger Toolkit
 [![Build Status](https://travis-ci.org/mtib/dicendanger.svg?branch=master)](https://travis-ci.org/mtib/dicendanger)
+[![Golang](https://img.shields.io/badge/golang-1.4.1-brightgreen.svg)](https://golang.org/)
+[![GoDoc](https://godoc.org/github.com/mtib/dicendanger?status.svg)](https://godoc.org/github.com/mtib/dicendanger)
+[![Gitter](https://badges.gitter.im/mtib/dicendanger.svg)](https://gitter.im/mtib/dicendanger?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 Dieses Toolkit soll dem technisch versierten Dungeon Master ein wenig Arbeit
 abnehmen.
