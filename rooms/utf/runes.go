@@ -5,10 +5,10 @@ const ( // Single Lines
 	HeavyHorizontal
 	LightVertical
 	HeavyVertical
-	LightTrippleDashHorizontal
-	HeavyTrippleDashHorizontal
-	LightTrippleDashVertical
-	HeavyTrippleDashVertical
+	LightTripleDashHorizontal
+	HeavyTripleDashHorizontal
+	LightTripleDashVertical
+	HeavyTripleDashVertical
 	_
 	_
 	_
@@ -16,7 +16,7 @@ const ( // Single Lines
 	LightDownRight
 	_
 	_
-	HeavtDownRight
+	HeavyDownRight
 	LightDownLeft
 	_
 	_
